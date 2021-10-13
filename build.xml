@@ -1,6 +1,188 @@
-<?xml version="1.0"?>
-<project name="Hello World Project" default="info">
-<target name="info">
-<echo> Hello World - Welcome to Sanooj's Lab</echo>
-</target>
-</project>
+what is Jenkins
+what is Jenkins workflow
+
+What are the benefits of using Jenkins?
+  - at the integrating stage build failures are cached
+  - for each stage change in the source code and automatic build report notification is generated and notify developers about the success or failure 
+  - it is integrated with LDAP mail server 
+  - jenkins is a continuous integration agile development and test-driven development( AKA, maven release steps are automated) 
+  - easy tracking of bugs at an early stage in a development evnironment than the production
+ 
+ 
+ What are the pre-requistes for using Jenkins?
+  - Source code repository and the working build script, that is a maven script which is checked into the repository 
+ 
+ Some of the useful plugins in Jenkins 
+  - Maven 2 project 
+  - Git 
+  - Amazon EC2
+  - HTML publisher
+  - Copy artifact 
+  - Join 
+  - Green balls 
+  - Blue ocean 
+  
+ How do you install Jenkins 
+  1. Install Java Version 8
+  2. Install Apache Tomcat Version 9 
+  3. Download Jenkins war file 
+  4. Deploy Jenkins war file 
+  5. Install Suggested plugins 
+  
+
+What are the two components Jenkins is mainly integrated with? 
+  1. Git ( version control )
+  2. Maven ( build tool )
+  
+What is Maven? What is the benifit of integrating Maven with Jenkins? 
+ - Maven is a build tool. It uses a simple pom.xml to configure all the dependencies needed to build tests and run the code. Maven manages the full lifecycle of a test project. Once integrated with Jenkins the maven web driver will build the project and execute all tests efficiently 
+ 
+Mention the commands you can use to start eh Jenkins manually
+ - in windows 
+     - jenkins.exe start 
+ - in linux 
+     - 
+ 
+Which SCM tools jenkins support 
+ - AccuREv
+ - CVS 
+ - Subversion
+ - Git 
+ - Mercurial
+ - Perforce 
+ - Clearcase 
+ - RTC  
+ 
+How will you define Post in Jenkins? 
+ - Post is a section that contains several additional steps that might execute after the completion of the pipeline 
+ 
+What are the parameters in Jenkins? 
+ - Paramaters are suppoeted by agent section and they are used to support various use-cases pipelines. 
+ 
+
+what is groovy? 
+ - Groocy from apache is a language designed for the java platform, it is the native scriptins languagefor jenkins. GUI based plusings enchance jenkins with grewat interfaces ans build reports that are of dynamic and consistent nature
+ 
+ 
+How can you clone a repository via Jenkins? 
+ - enter email and username 
+ - execute the command git config 
+ 
+How can you setup Jenkins job? 
+ - First mention how to create jenkins job [ In the Jenkins go to top page and select new job and then choose the build a free software side project,then optional SCM where the source code resides and setup the triggers to control when Jenkins will perform the builds and build script that perform the buils such as maven, ant, shell script etc... 
+  
+   Optional steps to collect information out of the build such as the archiving the arifacts and or recording java talk and test results and finally, to notify people by sending email using AIIMS updating issue tracker and so on...
+   
+How to create a backup and copy files in Jenkins? 
+ - periodically back up your Jenkins_home directory, this will consists of jenksins configureation and salve node configurationa nd build history 
+ 
+
+How will you secure Jenkins? 
+ 1. Authentication
+ 2. Authorization
+ 3. Security Realms
+ 4. Role base access control 
+ 
+Explain how you can deploy a custom build of a core plugin? 
+ - 
+ 
+What do you when you see a broken build for your preoject in Jenkins? 
+ - firstly I will check console output for the broken build and try to see if any file changes were missed if I'm not able to find the answer then I will clean and update my local workspace to replicate the problem on my local and then trying to solve  it
+ 
+
+What are the varioous ways in which build can be scheduled in Jenkins? 
+ - By source code management commits 
+ - completion of other builds 
+ - run at a specified time 
+  - by using manual build requests 
+  
+What is the use of pipelines in Jenkins? 
+ - Pipeline plugin is used in jenkins for making the jenkins pipeline, which gives us the view of stages or tasks to perform one after the other in the pipeline form. Pipeline help the team to review edit and iterate upon the tasks. Pipelines are durable and it can be optionally stop and wait for human approval as well as to start the next task a pipeline is extensible and can perform work in parallel it supports complex SIDI requirements 
+ 
+Explain the terms Agent, post-section, Jenkinsfile.
+ - Agent is a directive to tell Jenkins to execute the pipeline in a particular order. In declarative pipelines the agent directive is used to specify which agent or which slave the job or task is to be executed on this directive only allows you to specify where the task is to be executed with agent slave label or docker image 
+  
+  - Post-sections, if we have to add some notification and to perform some other tasks at the end of a pipeline post section will definitely run at the end of every pipeline's execution 
+  
+  - Jenkins file is nothing but a text file where all the definitions of pipelines are defined it is being checked in the source control repository 
+ 
+Do you know about cloud computing? How can jenkins fit into a cloud computing environment? 
+ - Cloud computing is the on-demand availabilty of computer system resources( cpu, mem, disk) especially data storage and computing power, without direct active management by the user. the term is generally used to describe data centers available to many users over the internet. 
+  example, AWS cloud service, which uses the CI/CD model so that they can push their work to the customers and constantly receive feedback Jenkins is used to automate the CI/CD pipeline for example a lot of jenkins plugins are available for many of the AWS services such as Amazon ec2 and ECS.
+  
+What is Kubernetes? Can it be used with Jenkins? 
+ - Kubernetes is a container orchestration tool, with k8s, one can create multiple container instances to achieve more fault tolerance, you can use k8s and deploy plug-in and use it with jenkins for continuous deployment. 
+ 
+Is it possible to run automated tests on Jenkins? 
+ - yes, We can use the tools like selenium, developers can schedule deep test runs and jenkins display the test results and sends report to the developers. 
+ 
+Let us say, you have a pipeline. the first job was successful, but the second failed. What should you do next?
+ - We just need to restart the pipeline where it failed by doing the restart from stage :)
+ 
+What is the use of Jenkins home directory? 
+ - All the settings, logs and configurations are stored in the Jenkins_home directory. It contains all the Jenkins server configurations details that you have configure int he manage Jenkins screen and these details are stored in the form of XML files
+
+What is a backup plugin? What is it used? 
+ - This is a helpgul that backs up all the critical settings and configurations to be used in the future. This is useful in the cases where there is a failure so that we don't lose the settings 
+
+What is a trigger? Give an exmaple of how the repository  is polled when a new commit is detected
+ - Tigeers are used to define when and how pipelines should be executed. when Jenkins is intergrated with an SCM tool for an exmpale GIT, the repository can be pulled every time there is a commit. The GIT plug-in should be first installed and setup and after this you can build a trigger that specifies when a new build should be started for example you can create a job that pulls the repository and triggers a build when a change is committed.
+
+How to define parameters for a build in Jenkins? 
+ - A build can take several input parameters to execute. For example, if you have multiple test suites, but you want to run only one, in that case you can set a parameter so that you are able to decide  which one you should run to have parameters in a job you need to specify the SIM while defining the parameter the parameter can be anything like a string or a file.
+ 
+
+What are the ways to configure jenkins node agent to communicate with jenkins master? 
+ - There are 2 ways to start the node agent - 
+    1. Browser 
+	2. command line. 
+     - If a Jenkins node agent is launched from a browser jnlp, ithat is a Java Web Start File is downloaded this file launches a new process on the client machine to run these jobs 
+   - So to start the node agent using the comamnd line the client needs an executable agent or a jar file when this file is run it simply launches a process of the client to communicate with the Jenkins master to run the build jobs. 
+   
+ How does Jenkins authenticate users? 
+  - Ther are 3 ways 
+   1. Default way
+   2. application server
+   3. LDAP server 
+   
+   1. This is the way to store the user data and the credentials in an internal database 
+   2. Here you can configure Jenkins to use authentication mechanism defined by the application server on which it is deployed 
+   3. configure jenkins to use ldap server 
+   
+ How can you use a third part tool in Jenkins? 
+ Following are the steps to use the third party tool with Jenkins 
+  - Install the thrid party software 
+  - download the required plug-in
+  - configure the third-party tool in the admin console 
+  - and also you can use the required plugin from the Jenkins build job and depends on the 3rd party tool, the procedure might vary slightly because of the difference in the configuration settings 
+  
+What are the types of pipelines in Jenkins? 
+  - CI/CD pipeline
+  - Scripted pipeline 
+  - Declarative pipeline 
+ 
+What syntax does Jenkins use to schedule build job or SVN polling? 
+ -  Cron syntax 
+ 
+What is Devops and in which stage does Jenkins fit in? 
+ - Devops is a software development practise that blends software development with the IT operations 
+ Jenksins plas a crusial rule because it helps in this integration by automating the build test and deployment process.
+
+Do you know any other continuous integration tools? How it Jenkins better than any of those? 
+ - Teamcity
+ - Bamboo
+
+Each has its own and advanatage 
+
+Name a Jenkins environment variable you have used in a shell script or batch file 
+ THere are many buildin environment varaible in the Jenkins 
+ - $JOB_NAME 
+ - $NODE_NAME
+ - $WORKSPACE
+ - $BUILD_URL
+ - $JOB_URL 
+ 
+What is continous integration in Jenkins? 
+ -  In software development multiple developers or teams work on different segments of the same web application so in this case you ahve to perform integration testing by integrating all modules in order to that an automated process for each piece of code is performed on a daily basis so that all your board gets tested so this process is known as continuous integration 
+ 
+ Commit--> Build -->Test -->Stage -->Deploy(Dev/QA) 
